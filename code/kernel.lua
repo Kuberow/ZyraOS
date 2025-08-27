@@ -2,6 +2,9 @@
 if zyra then
   panic("Multiple Zyra Sessions Running! Can't keep up!")
 end
+local zyra.pullEvent = os.pullEvent
+local zyra.pullEventRaw = os.pullEventRaw
+os.pullEvent = os.pullEventRaw
 zyra = {}
 screen = {}
 gpu = term
