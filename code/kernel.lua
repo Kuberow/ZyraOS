@@ -19,6 +19,14 @@ zyra.panic = function(s)
     print("PANIC: "..s) 
     sleep(panictime) end
 end
+function zyra.getChar()
+local event, char = zyra.pullEventRaw()
+if event = "char" then
+  return char
+  else
+    return
+  end
+end
 zyra.fs = {}
 zyra.permissions = {
     ["/kernel.lua"] = "none"
